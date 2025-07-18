@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="icon" *ngIf="user.weatherIcon">
+    {{ user.weatherIcon }}
+  </div>
+  <img [src]="user.picture.medium" alt="Avatar of {{ user.name.first }}">
+  <h3>{{ user.name.first }} {{ user.name.last }}</h3>
+  <p>{{ user.gender }}, {{ user.email }}</p>
+  <p>{{ user.location.city }}, {{ user.location.country }}</p>
+
+  <div *ngIf="user.weather" class="weather">
+    <p>Current: {{ user.weather.temperature }}°C</p>
+    <p>Min: {{ user.dailyMin }}°C | Max: {{ user.dailyMax }}°C</p>
+    <p>Code: {{ user.weather.weathercode }}</p>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<!-- src/app/pages/user-list/user-list.page.html -->
+<ng-container *ngIf="users.length; else loading">
+  <div class="user-grid">
+    <app-user-card
+      *ngFor="let u of users"
+      [user]="u">
+    </app-user-card>
+  </div>
+</ng-container>
+<ng-template #loading>
+  Loading users…
+</ng-template>
